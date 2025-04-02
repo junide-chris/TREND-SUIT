@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formal Suits - TREND-SUIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TREND-SUIT</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#collection">Collection</a></li>
+                <li><a href="index.html#recommendations">Recommendations</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="suit-detail">
+            <div class="suit-image">
+                <img src="https://i.pinimg.com/736x/ff/81/bd/ff81bd421762f26a1ed64a8ea190e120.jpg" alt="Formal Suit Detail">
+            </div>
+            <div class="suit-info">
+                <h1>Formal Suit Collection</h1>
+                <p>Discover our elegant and sophisticated formal suit collection, perfect for business and special occasions.</p>
+                <div class="suit-features">
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Premium quality materials</li>
+                        <li>Classic and modern designs</li>
+                        <li>Perfect for business meetings</li>
+                        <li>Timeless elegance</li>
+                    </ul>
+                </div>
+                <button class="cta-button" onclick="openGallery()">Explore</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Gallery -->
+    <div id="galleryModal" class="modal">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <div class="modal-content">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/bf/dd/97/bfdd9705eeef4abeba73564fdbfb21e3.jpg" alt="Formal Suit 1">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://files.oaiusercontent.com/file-BXaYdtBrmDkAdvCfbfSkUv?se=2025-03-28T17%3A20%3A44Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D470e636a-1a74-495c-b6a0-6528fa36d78c.webp&sig=jNgCiPrdDjVq1%2B%2BPA5HApjpOiSMccePN0CrlHRBrOKI%3D" alt="Formal Suit 2">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://files.oaiusercontent.com/file-KydTeQTTYbEuCt5k15QBkX?se=2025-03-28T17%3A20%3A44Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D39bf8d89-5d53-4082-b3fd-e39fec87222e.webp&sig=bm53IwWIKdfzqrrs2v7RVOQZ8mEdQafDKlEdbd3Htac%3D" alt="Formal Suit 3">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://files.oaiusercontent.com/file-WFBqXfW7bC5scyN5XCWDd2?se=2025-03-28T17%3A21%3A05Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D5eb3b59f-713b-489c-a44d-24f447c0c236.webp&sig=qMoCvWAXvqK2E5Vd5Pq9Q/tR3EjUR2h8n0dgCmlCB7I%3D" alt="Formal Suit 4">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://files.oaiusercontent.com/file-95CyRfJS2UXj6FB9Jgvfn4?se=2025-03-28T17%3A25%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D625508ad-0a45-49c0-80e3-3c2b7921c64b.webp&sig=BSBjvOj%2BkU88oad1gEPA8i%2B/h3c/nouw7f1IK0UrygA%3D" alt="Formal Suit 5">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://files.oaiusercontent.com/file-CLrpUBpWfJ5Gpfi716pycE?se=2025-03-28T17%3A25%3A40Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D5a4713cb-a2ae-48b0-b960-d871c41e7a36.webp&sig=%2BMD9y70LfVVUcacvJZExSNR6Qu%2B%2BlgWd5QM%2B0hHa0V8%3D" alt="Formal Suit 6">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/a4/d0/08/a4d00837f8e448b7082948f28ced3c79.jpg" alt="Formal Suit 7">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/50/14/b8/5014b8fd481fdd577d967b93ed142dc3.jpg" alt="Formal Suit 8">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/d1/a0/26/d1a026857031b4ce6e0d21648231d6d2.jpg" alt="Formal Suit 9">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TREND-SUIT</h3>
+                <p>Your destination for premium suit recommendations</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#collection">Collection</a></li>
+                    <li><a href="index.html#recommendations">Recommendations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Elegant Suits. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html> 

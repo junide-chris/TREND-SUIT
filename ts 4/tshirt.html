@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt - Trend Suit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .product-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .product-image {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .recommend-btn {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .recommend-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #e74c3c;
+        }
+
+        /* Styling modal */
+        .styling-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .styling-modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .styling-close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .styling-close:hover,
+        .styling-close:focus {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .styling-modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+        
+        .styling-title {
+            text-align: center;
+            color: #333;
+            margin-top: 10px;
+        }
+        
+        /* Button styling */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .styling-btn {
+            background: #9b59b6;  /* Purple to match the t-shirt */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .styling-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Trend Suit</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#collection">Collection</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://i.pinimg.com/736x/4b/ea/c1/4beac1a2ceb6ff197cd14c57547d5356.jpg" alt="Green T-Shirt">
+                <button onclick="handleTshirtRecommend()" class="recommend-btn">RECOMMEND</button>
+            </div>
+            <h2>Green Ribbed T-Shirt</h2>
+            <p>A comfortable and stylish t-shirt perfect for casual wear.</p>
+        </div>
+    </main>
+
+    <!-- Recommendation Modal -->
+    <div id="recommendModal" class="modal">
+        <div id="recommendContent" class="modal-content">
+            <span class="close-btn" onclick="closeRecommendModal()">&times;</span>
+            <img id="recommendImage" src="" alt="Recommended Suit">
+            <h2 id="recommendTitle"></h2>
+            <p id="recommendDescription"></p>
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button class="cta-button" onclick="openGallery()">EXPLORE</button>
+        <button class="styling-btn" onclick="openStylingModal()">EXPLORE STYLING</button>
+    </div>
+
+    <!-- Add this at the end of your body section -->
+    <div id="stylingModal" class="styling-modal">
+        <div class="styling-modal-content">
+            <span class="styling-close" onclick="closeStylingModal()">&times;</span>
+            <img src="https://i.pinimg.com/736x/c4/e8/09/c4e809c81a44379d665a6d2b274231d1.jpg" alt="New Outfit Image">
+            <h3 class="styling-title">Modern Casual Look</h3>
+        </div>
+    </div>
+
+    <script>
+        // Handle t-shirt recommend button click
+        function handleTshirtRecommend() {
+            const modal = document.getElementById('recommendModal');
+            const modalContent = document.getElementById('recommendContent');
+            const modalImage = document.getElementById('recommendImage');
+            const modalTitle = document.getElementById('recommendTitle');
+            const modalDescription = document.getElementById('recommendDescription');
+            
+            // Define recommendations for t-shirt
+            const recommendations = [
+                {
+                    image: 'https://i.pinimg.com/474x/27/52/12/275212d74fdd7d060b69548be81e5fcd.jpg',
+                    title: 'Classic Casual Suit',
+                    description: 'A timeless casual suit perfect for everyday occasions. Features a comfortable fit and premium materials.'
+                },
+                {
+                    image: 'https://i.pinimg.com/474x/c7/72/cb/c772cb5aa8153280604ebc982456f726.jpg',
+                    title: 'Modern Business Casual',
+                    description: 'A contemporary take on business casual attire. Ideal for professional settings while maintaining comfort.'
+                },
+                {
+                    image: 'https://i.pinimg.com/474x/e7/85/0e/e7850e9742ae012df53f28357b42e28b.jpg',
+                    title: 'Smart Casual Ensemble',
+                    description: 'A versatile smart casual suit that bridges the gap between formal and casual wear.'
+                }
+            ];
+
+            // Get random recommendation
+            const randomRecommendation = recommendations[Math.floor(Math.random() * recommendations.length)];
+
+            // Update modal content
+            modalImage.src = randomRecommendation.image;
+            modalTitle.textContent = randomRecommendation.title;
+            modalDescription.textContent = randomRecommendation.description;
+
+            // Show modal with animation
+            modal.style.display = 'flex';
+            modalContent.style.transform = 'scale(1)';
+            modalContent.style.opacity = '1';
+        }
+
+        // Close modal function
+        function closeRecommendModal() {
+            const modal = document.getElementById('recommendModal');
+            const modalContent = document.getElementById('recommendContent');
+            
+            // Animate out
+            modalContent.style.transform = 'scale(0.8)';
+            modalContent.style.opacity = '0';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        function openStylingModal() {
+            document.getElementById("stylingModal").style.display = "flex";
+        }
+        
+        function closeStylingModal() {
+            document.getElementById("stylingModal").style.display = "none";
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById("stylingModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html> 

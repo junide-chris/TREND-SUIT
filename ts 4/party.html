@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Suits - TREND-SUIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TREND-SUIT</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#collection">Collection</a></li>
+                <li><a href="index.html#recommendations">Recommendations</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="suit-detail">
+            <div class="suit-image">
+                <img src="https://i.pinimg.com/474x/1f/4b/48/1f4b48eff41c08220306c59cc7160442.jpg" alt="Party Suit Detail">
+            </div>
+            <div class="suit-info">
+                <h1>Party Suit Collection</h1>
+                <p>Discover our vibrant and stylish party suit collection, perfect for social gatherings and special events.</p>
+                <div class="suit-features">
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Trendy and modern designs</li>
+                        <li>Vibrant color options</li>
+                        <li>Perfect for social events</li>
+                        <li>Contemporary style</li>
+                    </ul>
+                </div>
+                <button class="cta-button" onclick="openGallery()">Explore</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Gallery -->
+    <div id="galleryModal" class="modal">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <div class="modal-content">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/474x/1f/4b/48/1f4b48eff41c08220306c59cc7160442.jpg" alt="Party Suit 1">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/474x/58/d3/34/58d33472dbe92cb87275fd7af69c4217.jpg" alt="Party Suit 2">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/474x/b2/b8/ec/b2b8ec0a112728a9246c68e72b5c31ab.jpg" alt="Party Suit 3">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/ce/98/09/ce9809553242af881f2530df9ada57b9.jpg" alt="Party Suit 4">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/5e/d3/87/5ed387d97a21abbe0632cbea2ee1e3d8.jpg" alt="Party Suit 5">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/6f/36/4c/6f364c17cdbeb0b82b5a865df227eef3.jpg" alt="Party Suit 6">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/b1/46/a9/b146a9c6a5b87d14755583fbc98df749.jpg" alt="Party Suit 7">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/474x/6b/07/aa/6b07aa25592a1d38ed37824faa50112b.jpg" alt="Party Suit 8">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/474x/f2/30/b0/f230b09a845a8e1fa4aa210b07790f37.jpg" alt="Party Suit 9">
+                    <button class="recommend-btn">Recommend</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TREND-SUIT</h3>
+                <p>Your destination for premium suit recommendations</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#collection">Collection</a></li>
+                    <li><a href="index.html#recommendations">Recommendations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Elegant Suits. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html> 

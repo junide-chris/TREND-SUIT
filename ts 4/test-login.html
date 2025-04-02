@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Login | TRENDSUIT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Copy your existing styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .logo p {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .card-title {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .input-icon {
+            position: relative;
+        }
+        
+        .input-icon i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            color: #666;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+            background-color: #f9f9f9;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #6a0dad;
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: #8a2be2;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .test-mode-banner {
+            background-color: #ff9800;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .notice {
+            background-color: #fffbf0;
+            border-left: 4px solid #ff9800;
+            padding: 10px 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-mode-banner">
+        TEST MODE - OTP Verification Bypassed
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <h1>TRENDSUIT</h1>
+                <p>Premium Fashion Collection</p>
+            </div>
+            
+            <h2 class="card-title">Test Login (No OTP)</h2>
+            
+            <div class="notice">
+                <p><strong>Note:</strong> This page bypasses the OTP verification for testing purposes.</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <div class="input-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                    <input type="tel" id="mobile" class="form-control" placeholder="Enter your mobile number">
+                </div>
+            </div>
+            
+            <button id="loginBtn" class="btn">Skip OTP & Login</button>
+        </div>
+        
+        <a href="login.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Normal Login
+        </a>
+        
+        <a href="index.html" class="back-link">
+            <i class="fas fa-home"></i> Back to Homepage
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('loginBtn');
+            const nameInput = document.getElementById('name');
+            const mobileInput = document.getElementById('mobile');
+            
+            loginBtn.addEventListener('click', function() {
+                const name = nameInput.value.trim();
+                const mobile = mobileInput.value.trim();
+                
+                if (!name) {
+                    alert('Please enter your name');
+                    return;
+                }
+                
+                if (!mobile) {
+                    alert('Please enter your mobile number');
+                    return;
+                }
+                
+                // Store user data directly (bypassing OTP)
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userMobile', mobile);
+                localStorage.setItem('isLoggedIn', 'true');
+                
+                // Redirect to home page
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html> 
